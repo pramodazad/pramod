@@ -1,0 +1,278 @@
+<div class="row-off row-off-left">
+  <div id="header">
+    <div id="header-main">
+      <section  class="plan-button-section" layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+        <h2>Planisto, the best way to plan your event</h2>
+      </section>
+      <!-- <img src="images/intro-bg.jpg" alt="" class="img-circle img30_30"> -->
+      <div class="row">
+        <div class="col-md-3 col-xsm-6">
+          <section class="pricing-table pricing-table-primary">
+            <header><h2>Free</h2></header>
+            <p class="pricing-price"><span class="pricing-sign">$</span>0.00<span class="pricing-sub">/mo</span></p>
+            <div class="pricing-plan-details">
+              <p class="pricing-lead">Including</p>
+              <ul>
+                <li>No Support</li>
+                <li>1 Website</li>
+                <li>10GB Disk Space</li>
+                <li>3 Database</li>
+                <li>1 Email Address</li>
+              </ul>                            
+            </div>
+            <footer><a href="javascript:;" class="btn btn-primary">Buy now</a></footer>
+          </section>
+        </div>
+      </div>
+      <section  class="plan-button-section" layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+
+        <md-button class="md-raised md-primary" data-toggle="modal" data-target="#RegisterEvent">Plan an Event</md-button>
+        
+      </section>
+    </div>
+  </div>
+</div>
+<!--Register Event Modal-->
+<div class="modal fade" id="RegisterEvent" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel" layout-align="center center">Register your Event
+        </h4>
+      </div>
+      <form name="myForm">
+        <div class="modal-body">
+          <div layout layout-sm="column">
+            <md-input-container style="width:70%">
+            <label>Event Ttile</label>
+            <input ng-model="Event.Title">
+          </md-input-container>
+          <md-input-container flex>
+          <label>Event Date</label>
+          <input type="date" ng-model="Event.EventDate">
+        </md-input-container>
+      </div>
+      <div layout layout-sm="column">
+        <md-input-container flex id="firstName">
+        <label>First Name</label><input ng-model="user.firstName"></input>
+      </md-input-container>
+      <md-input-container flex>
+      <label>Last Name</label>
+      <input ng-model="user.LastName">
+    </md-input-container>
+  </div>
+  <div layout layout-sm="column">
+    <md-input-container flex>
+    <label>Email</label><input type="email" ng-model="user.Email" ng-required="true">
+  </md-input-container>
+  <md-input-container flex>
+  <label>Mobile (Required)</label><input ng-model="user.Mobile" ng-required="true">
+</md-input-container>
+</div>
+</div>
+<div class="modal-footer">
+  <md-button id="reset" data-dismiss="modal" ng-click="cancelRegisterEvent()">cancel</md-button>
+  <md-button type="submit" popover="fill all the details" popover-trigger="mouseenter" data-dismiss="modal" ng-disabled="myForm.$invalid" ng-click="RegisterEvent()" >Register</md-button>
+
+</div>
+</form>
+</div>
+</div>
+</div>
+<!--End Register Event Modal-->
+<!--How we work section-->
+<div id="features" class="features">
+  <header>
+    <h2 class="section-heading-underline">How we work</h2>
+  </header>
+  <div class="container">
+    <div class="row">
+      <div class="feature-item col-md-4 text-center">
+        <div class="icon-container"><span class="ti-palette"></span></div>
+        <md-icon md-svg-icon="images/material-design/svg/settings49.svg" style="color: red;" class="s24" aria-label="Setting Icon"></md-icon>
+        <h3>Register you event</h3>
+        <div class="desc">
+          <p>Tell us the date of your big celebration</p>
+        </div>
+      </div>
+      <div class="feature-item col-md-4 text-center">
+        <div class="icon-container"><span class="ti-layout"></span></div>
+        <md-icon md-svg-icon="images/material-design/svg/add179.svg" style="color: red;" class="s24" aria-label="Setting Icon"></md-icon>
+        <h3>Add the services you required</h3>
+        <div class="desc">
+          <p>Give us details of what want. Your requirement will be sent to the service providers</p>
+        </div>
+      </div>
+      <div class="feature-item col-md-4 text-center">
+        <md-icon md-svg-icon="images/material-design/svg/been.svg" style="color: red;" class="s24" aria-label="Setting Icon"></md-icon>
+        <div class="icon-container"><span class="ti-desktop"></span></div>
+        <h3>Select the service providers</h3>
+        <div class="desc">
+          <p>For every job select service providers to cater your needs</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="feature-item col-md-4 text-center">
+        <div class="icon-container"><span class="ti-arrows-corner"></span></div>
+        <h3>Book for your event</h3>
+        <div class="desc">
+          <p>book all the service providers</p>
+        </div>
+      </div>
+      <div class="feature-item col-md-4 text-center">
+        <div class="icon-container"><span class="ti-pencil"></span></div>
+        <h3>Enjoy your event</h3>
+        <div class="desc">
+          <p>While our service providers will take care of all your needs</p>
+        </div>
+      </div>
+      <div class="feature-item col-md-4 text-center">
+        <div class="icon-container"><span class="ti-world"></span></div>
+        <h3>Tell your friends about us</h3>
+        <div class="desc">
+          <p>Tell your friends</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--End How we work section-->
+<!--Testimonial section-->
+<div id="testimonials" class="testimonials">
+  <div id="testimonials-carousel" data-ride="carousel" data-interval="5000" class="carousel slide">
+    <ol class="carousel-indicators">
+      <li data-target="#testimonials-carousel" data-slide-to="0" class="active"></li>
+      <li data-target="#testimonials-carousel" data-slide-to="1" class=""></li>
+      <li data-target="#testimonials-carousel" data-slide-to="2" class=""></li>
+      <li data-target="#testimonials-carousel" data-slide-to="3" class=""></li>
+      <li data-target="#testimonials-carousel" data-slide-to="4" class=""></li>
+    </ol>
+    <div class="carousel-inner text-center">
+      <div class="item">
+        <div><span class="ti-quote-left quote"></span>
+          <p>Great job! Planisto is simply wonderful! we just arranged our marriage ceremony thrugh Planisto. Planisto made it so easy. simply love planisto.</p>
+        </div><small>Sushil Mishra</small>
+      </div>
+      <div class="item">
+        <div><span class="ti-quote-left quote"></span>
+          <p>Very impresive!! being the first birthday party or our little princess, we were so worried but planisto managed every thing... we will plan our next party through planisto only </p>
+        </div><small>Anita Kumari</small>
+      </div>
+      <div class="item active">
+        <div><span class="ti-quote-left quote"></span>
+          <p>Excellent! Looking forward to see more happning parties from you.</p>
+        </div><small>Pramod azad</small>
+      </div>
+      <div class="item">
+        <div><span class="ti-quote-left quote"></span>
+          <p>Really awesome that you're the first one who came up with this idea, I've been looking for one for a long time.</p>
+        </div><small>Manoj azad</small>
+      </div>
+      <div class="item">
+        <div><span class="ti-quote-left quote"></span>
+          <p>Amazing! Exact what I am looking for. So thank you so much Planisto for making my life easier.</p>
+        </div><small>Sanjay Azad</small>
+      </div>
+    </div>
+  </div>
+</div>
+<!--nav class="navbar navbar-custom navbar-fixed-top" role="navigation"-->
+
+
+<!--div class="container">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse"> <i class="fa fa-bars"></i>
+    </button>
+    <a class="navbar-brand" href="#/">
+      <span class="light">PLANISTO</span>
+    </a>
+  </div>
+</div-->
+
+<!-- Collect the nav links, forms, and other content for toggling -->
+    <!--div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+    <ul class="nav navbar-nav"-->
+      <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+       <!--  <li class="hidden">
+          <a href="#page-top"></a>
+        </li>
+        <li>
+          <a  href="#about">About</a>
+        </li>
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+        <li>
+          <a href="javascript:;" data-toggle="modal" data-target="#loginModal">login</a>
+        </li>
+      </ul>
+    </div>
+    
+  </div>
+ \
+</nav>
+-->
+<!-- Intro Header -->
+<!--header class="intro">
+  <div class="intro-body">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 container-panel">
+          <h1 class="brand-heading section-title">Planisto</h1>
+          <h5>Your personal Event planner</h5>
+          <div class="vspacer30"></div>
+          <form role="form" ng-submit="getLatLngFromAddress()">
+            <div class="row">
+              <div class="col-md-5">
+                <div class="form-group input-box">
+                  <md-autocomplete
+                  md-selected-item="selectedItem"
+                  md-search-text-change="null"
+                  md-search-text="searchText"
+                  md-selected-item-change="catAutocomplete(searchText)"
+                  md-items="item in catAutocomplete(searchText)"
+                  md-item-text="item.name"
+                  md-min-length="1"
+                  placeholder="What are you planning today?">
+                  <md-item-template>
+                  <span md-highlight-text="searchText" md-highlight-flags="^i">{{item.name}}</span>
+                </md-item-template>
+                <md-not-found>No matches found for "{{searchText}}".</md-not-found>
+              </md-autocomplete>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="form-group input-box">
+              <label class="sr-only" for="location">Location</label>
+              <md-autocomplete 
+              md-selected-item="address" 
+              md-search-text-change="null" 
+              md-search-text="addrSearchText" 
+              md-items="place in getLocations(addrSearchText)" 
+              md-selected-item-change="null" 
+              md-item-text="place.description" 
+              placeholder="Location?">
+              <md-item-template>
+              <span md-highlight-text="addrSearchText" md-highlight-flags="^i">{{place.description}}</span>
+            </md-item-template>
+            <md-not-found>No matches found for "{{addrSearchText}}".</md-not-found>
+          </md-autocomplete>
+        </div>
+      </div>
+      <div class="col-md-2">
+
+       <a href="#/search"> <button type="button" class="btn btn-search">Search</button>
+
+       </div>
+     </div>
+   </form>
+   <div class="vspacer30"></div>
+ </div>
+</div>
+</div>
+</div>
+</header-->
+<!--footer section-->

@@ -1,0 +1,81 @@
+<div class="AfterSucessfulLogin">
+	<div id="wrap">
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">Planisto.in</a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+					<ul class="nav navbar-nav navbar-right">
+						
+						<li><h4>{{$scope.user.firstName}}</h4></li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><md-icon md-svg-icon="images/material-design/svg/settings49.svg" style="color: blue;" aria-label="Setting Icon"></md-icon> <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="javascript:;" data-toggle="modal" data-target="#loginModal"><md-icon md-svg-icon="images/material-design/svg/user157.svg" style="color: blue;" aria-label="Login Icon"></md-icon> Login</a></li>
+								<li><a href="#">Another action</a></li>
+								<li><a href="#">Something else here</a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href="#">Separated link</a></li>
+							</ul>
+						</li>
+
+					</ul>
+
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
+	</div>
+	<section layout="column" layout-fill style="padding-bottom: 32px;">
+		<div class="UserPage">
+			<md-whiteframe class="md-whiteframe-z3" layout layout-align="center left">
+			<div class="row">
+				<div class="col-md-1"></div>
+				<div class="col-md-10">
+					<h4>these details will help in planning</h4>
+				</div>
+				<accordion>
+					<div class="panel-group">
+					</div>
+				</accordion>			
+			</div>
+		</div>
+	</md-whiteframe>
+</div>
+<div ng-controller="UserPageCtrl" layout="column" style="height:500px;">
+	<md-button ng-click="toggleRight()"
+	class="md-primary">
+	Toggle right
+</md-button>
+
+<md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right" style="height: 400px;top: 100px;">
+<md-toolbar class="md-theme-light">
+<h1 class="md-toolbar-tools">Sidenav Right</h1>
+</md-toolbar>
+<md-content ng-controller="RightCtrl" layout-padding>
+<form>
+	<md-input-container>
+	<label for="testInput">Test input</label>
+	<input type="text" id="testInput"
+	ng-model="data" md-sidenav-focus>
+</md-input-container>
+</form>
+<md-button ng-click="close()" class="md-primary">
+Close Sidenav Right
+</md-button>
+</md-content>
+</md-sidenav>
+</div>
+</section>
+</div>

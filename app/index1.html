@@ -1,0 +1,163 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="bower_components/angular-google-places-autocomplete/src/autocomplete.css" />
+    <link rel="stylesheet" href="bower_components/angular-google-places-autocomplete/dist/autocomplete.min.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animate.css">
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <!-- endbuild -->
+
+</head>
+<body ng-app="planistoApp" id="page-top">
+    <!--[if lte IE 8]>
+    <p class="browsehappy">
+        You are using an <strong>outdated</strong>
+        browser. Please
+        <a href="http://browsehappy.com/">upgrade your browser</a>
+        to improve your experience.
+    </p>
+    <![endif]-->
+
+    <div ng-view="" class="fade"></div>
+
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true" ng-controller="LoginCtrl">
+        <div class="modal-dialog">
+            <div class="login-box">
+                <div class="lb-header">
+                    <a href="javascript:;" ng-class="{'active' : tab === 1}" id="login-box-link" ng-click="tab = 1">Login</a>
+                    <a href="javascript:;" id="signup-box-link" ng-class="{'active' : tab === 2}" ng-click="tab = 2">Sign Up</a>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-target="#loginModal">
+                        <span class="fa fa-times" style="float:right;cursor:pointer;" ></span>
+                    </button>
+                </div>
+                <div class="social-login">
+                    <a href="#"> <i class="fa fa-facebook fa-lg"></i>
+                        Facebook Login
+                    </a>
+                    <a href="#">
+                        <i class="fa fa-google-plus fa-lg"></i>
+                        Google+ Login
+                    </a>
+                </div>
+                <form class="email-login" ng-init="tab = 1" ng-show="tab === 1">
+                    <div layout="row">
+                        <md-input-container flex>
+                            <input type="email" ng-model="user.email" placeholder="Email" ng-required="true"></md-input-container>
+                    </div>
+                    <div layout="row">
+                        <md-input-container flex>
+                            <input type="password" ng-model="user.paasword" placeholder="Password" ng-required="true"></md-input-container>
+                    </div>
+                    <div layout="row" >
+                        <div>
+                            <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">Remember Me</md-checkbox>
+                        </div>
+                    </div>
+                    <div class="u-form-group">
+                        <button>Log in</button>
+                    </div>
+                    <div class="u-form-group">
+                        <a href="#" class="forgot-password">Forgot password?</a>
+                    </div>
+                </form>
+                <form class="email-signup" ng-show="tab === 2">
+                    <div layout="row">
+                        <md-input-container flex>
+                            <input type="email" ng-model="newUser.email" placeholder="Email" ng-required="true"> 
+                        </md-input-container>
+                    </div>
+                    <div layout="row">
+                        <md-input-container flex>
+                            <input type="password" ng-model="newUser.paasword" placeholder="Password" ng-required="true"></md-input-container>
+                    </div>
+                    <div layout="row">
+                        <md-input-container flex>
+                            <input type="password" ng-model="newUser.cnfPaasword" placeholder="Confirm Password" ng-required="true"></md-input-container>
+                    </div>
+                    <div class="u-form-group">
+                        <button>Sign Up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+<script>
+ !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+     (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+     r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+ }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ ga('create', 'UA-XXXXX-X');
+ ga('send', 'pageview');
+</script>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+<script>
+    $(document).ready(function(){
+    
+        animationHover('section-title', 'bounce');
+});</script>
+    <script>
+!function animationHover(element, animation){
+    element = $(element);
+    element.hover(
+        function() {
+            element.addClass('animated ' + animation);        
+        },
+        function(){
+            //wait for animation to finish before removing classes
+            window.setTimeout( function(){
+                element.removeClass('animated ' + animation);
+            }, 2000);         
+        });
+}</script>
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/angular-google-places-autocomplete/src/autocomplete.js"></script>
+    <script src="bower_components/angular-google-places-autocomplete/dist/autocomplete.min.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/jquery.easing.min.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/about.js"></script>
+
+    <script src="scripts/services/search/searchservice.js"></script>
+    <script src="scripts/controllers/login.js"></script>
+    <script src="scripts/controllers/results.js"></script>
+    <!-- endbuild -->
+    
+    
+    </body>
+</html>

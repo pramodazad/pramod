@@ -1,0 +1,47 @@
+<div class="modal fade" id="RegisterEvent" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel" layout-align="center center">Register your Event
+        </h4>
+      </div>
+      <form>
+        <div class="modal-body">
+          <div layout layout-sm="column">
+            <md-input-container style="width:70%">
+            <label>Event Ttile</label>
+            <input ng-model="Event.Title">
+          </md-input-container>
+          <md-input-container flex>
+          <label>Event Date</label>
+          <input type="date" ng-model="Event.EventDate">
+        </md-input-container>
+      </div>
+      <div layout layout-sm="column">
+        <md-input-container flex id="firstName">
+        <label>First Name</label><input ng-model="user.firstName"></input>
+      </md-input-container>
+      <md-input-container flex>
+      <label>Last Name</label>
+      <input ng-model="user.LastName">
+    </md-input-container>
+  </div>
+  <div layout layout-sm="column">
+    <md-input-container flex>
+    <label>Email</label><input type="email" ng-model="user.Email" ng-required="true">
+  </md-input-container>
+  <md-input-container flex>
+  <label>Mobile (Required)</label><input ng-model="user.Mobile" ng-required="true">
+</md-input-container>
+</div>
+</div>
+<div class="modal-footer">
+  <md-button id="reset" data-dismiss="modal" ng-click="cancelRegisterEvent()">cancel</md-button>
+  <md-button data-dismiss="modal" class="md-primary" type="submit">Register</md-button>
+</form>
+</div>
+</div>
+</div>
+</div>

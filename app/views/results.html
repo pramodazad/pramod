@@ -1,0 +1,98 @@
+
+<nav class="navbar navbar-fixed-top" ng-controller="MainCtrl">
+    <div class="row" class="col-md-12 col-md-offset-2">
+      <form role="form" ng-submit="getLatLngFromAddress()">
+             <div class="col-md-3">
+                <div class="form-group input-box">
+                  <md-autocomplete
+                    md-selected-item="selectedItem"
+                    md-search-text-change="null"
+                    md-search-text="searchText"
+                    md-selected-item-change="catAutocomplete(searchText)"
+                    md-items="item in catAutocomplete(searchText)"
+                    md-item-text="item.name"
+                    md-min-length="1"
+                    placeholder="What are you planning today?">
+                    <md-item-template>
+                      <span md-highlight-text="searchText" md-highlight-flags="^i">{{item.name}}</span>
+                    </md-item-template>
+                    <md-not-found>No matches found for "{{searchText}}".</md-not-found>
+                  </md-autocomplete>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div class="form-group input-box">
+                  <label class="sr-only" for="location">Location</label>
+                  <md-autocomplete 
+                    md-selected-item="address" 
+                    md-search-text-change="null" 
+                    md-search-text="addrSearchText" 
+                    md-items="place in getLocations(addrSearchText)" 
+                    md-selected-item-change="null" 
+                    md-item-text="place.description" 
+                    placeholder="Location?">
+                    <md-item-template>
+                      <span md-highlight-text="addrSearchText" md-highlight-flags="^i">{{place.description}}</span>
+                    </md-item-template>
+                    <md-not-found>No matches found for "{{addrSearchText}}".</md-not-found>
+                  </md-autocomplete>
+                </div>
+              </div>
+              <div class="col-md-2">
+                
+               <a href="#/search"> <button type="button" class="btn btn-search">Search</button> </a>
+              
+              </div>
+          </form>
+        </div>
+    </nav>
+    <div class="row">
+       <!-- About Section -->
+    <section id="about" class="content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2 class="section-title">About Planisto</h2>
+                <div class="vspacer30"></div>
+                <p>Planisto is one stop solution for all the rush and hustle you face while organising an event, either it be a family function, or a corporate event.</p>
+                <p>We brings all the people you need for your event at your doorstep by listing contact details of all related vendor which range from corporate event planner to Halwayi (Caterer) for your wedding</p>
+                <p>It is a free service, neither we charge you a penny nor take any commission from the vendor. All it does is to bring event organizing vendor and end user at a common platform.</p>
+            </div>
+        </div>
+    </section>
+     <!-- About Section -->
+    <section id="about" class="content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2 class="section-title">About Planisto</h2>
+                <div class="vspacer30"></div>
+                <p>Planisto is one stop solution for all the rush and hustle you face while organising an event, either it be a family function, or a corporate event.</p>
+                <p>We brings all the people you need for your event at your doorstep by listing contact details of all related vendor which range from corporate event planner to Halwayi (Caterer) for your wedding</p>
+                <p>It is a free service, neither we charge you a penny nor take any commission from the vendor. All it does is to bring event organizing vendor and end user at a common platform.</p>
+            </div>
+        </div>
+    </section>
+     <!-- About Section -->
+    <section id="about" class="content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2 class="section-title">About Planisto</h2>
+                <div class="vspacer30"></div>
+                <p>Planisto is one stop solution for all the rush and hustle you face while organising an event, either it be a family function, or a corporate event.</p>
+                <p>We brings all the people you need for your event at your doorstep by listing contact details of all related vendor which range from corporate event planner to Halwayi (Caterer) for your wedding</p>
+                <p>It is a free service, neither we charge you a penny nor take any commission from the vendor. All it does is to bring event organizing vendor and end user at a common platform.</p>
+            </div>
+        </div>
+    </section>
+     <!-- About Section -->
+    <section id="about" class="content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2 class="section-title">About Planisto</h2>
+                <div class="vspacer30"></div>
+                <p>Planisto is one stop solution for all the rush and hustle you face while organising an event, either it be a family function, or a corporate event.</p>
+                <p>We brings all the people you need for your event at your doorstep by listing contact details of all related vendor which range from corporate event planner to Halwayi (Caterer) for your wedding</p>
+                <p>It is a free service, neither we charge you a penny nor take any commission from the vendor. All it does is to bring event organizing vendor and end user at a common platform.</p>
+            </div>
+        </div>
+    </section>
+    </div>
