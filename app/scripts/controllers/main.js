@@ -8,7 +8,7 @@
  * Controller of the planistoApp
  */
  angular.module('planistoApp')
- .controller('MainCtrl', function ($scope, searchService, $q, $location, $rootScope, $timeout) {
+ .controller('MainCtrl', function ($scope, searchService, $q, $location, $rootScope, $timeout,$http) {
   this.awesomeThings = [
   'HTML5 Boilerplate',
   'AngularJS',
@@ -19,7 +19,7 @@
   $scope.address = "";
   $scope.lat = "";
   $scope.lng = "";
-  
+  $scope.firstname="";
 
   $scope.catAutocomplete = function(term) {
     return searchService.getCategories(term).then(function(result){
@@ -62,10 +62,25 @@
   $scope.cancelRegisterEvent=function(){
 
   }
+
+
+  
   $scope.RegisterEvent =function(){
-    $timeout(redirect,160);
+    $scope.firstname=$scope.user.firstName;
+    $timeout(redirect,180);
   }
-  function redirect() {
+  function redirect($scope) {
+    
     $location.path("/user");
   }
-});
+})
+.controller('FooterCtrl', function ($scope) {
+
+})
+.controller('RegisterEventCtrl', function ($scope) {
+
+})
+.controller('UserAfterLoginCtrl', function ($scope) {
+$scope.azad=$scope.user.firstName;
+})
+;

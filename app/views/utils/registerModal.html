@@ -1,4 +1,4 @@
-<div class="modal fade" id="RegisterEvent" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="RegisterEvent" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" ng-controller="RegisterEventCtrl">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -7,7 +7,7 @@
         <h4 class="modal-title" id="myModalLabel" layout-align="center center">Register your Event
         </h4>
       </div>
-      <form>
+      <!-- <form> -->
         <div class="modal-body">
           <div layout layout-sm="column">
             <md-input-container style="width:70%">
@@ -21,7 +21,8 @@
       </div>
       <div layout layout-sm="column">
         <md-input-container flex id="firstName">
-        <label>First Name</label><input ng-model="user.firstName"></input>
+        <label>First Name</label><input ng-model="firstName"></input>
+        
       </md-input-container>
       <md-input-container flex>
       <label>Last Name</label>
@@ -38,9 +39,10 @@
 </div>
 </div>
 <div class="modal-footer">
+  
   <md-button id="reset" data-dismiss="modal" ng-click="cancelRegisterEvent()">cancel</md-button>
   <md-button data-dismiss="modal" class="md-primary" type="submit">Register</md-button>
-</form>
+<!-- </form> -->
 </div>
 </div>
 </div>

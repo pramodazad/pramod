@@ -338,3 +338,15 @@ background-color: rgb(8, 163, 8);
     background-color: #f6f6f6;
     border-color: #e9e9e9;
 }
+.lock-size .md-fab-speed-dial{
+  background-color: #f6f6f6;
+}
+.lock-size .md-button.md-raised:not([disabled]), .md-button.md-fab, .md-button.md-raised.md-focused:not([disabled]), .md-button.md-fab.md-focused:not([disabled]){
+  background: transparent;
+}
+.lock-size   .twitter{
+  color: #4099FF;
+}
+.lock-size  a.md-button.md-fab md-icon, .md-button.md-fab md-icon .facebook { 
+  color: #3B5998;
+}

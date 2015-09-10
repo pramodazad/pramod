@@ -23,118 +23,135 @@
 	<!-- endbuild -->
 	<!-- build:css(.tmp) styles/main.css -->
 	<link rel="stylesheet" href="styles/styles.css">
-	<link rel="stylesheet" href="styles/font-awesome.min.css">	
+	<link rel="stylesheet" href="styles/flaticon.css">
+	<!-- <link rel="stylesheet" href="styles/font-awesome.min.css">	 -->
 	<!-- endbuild -->
 </head>
 <body ng-app="planistoApp" id="page-top">
-		<!--Ng-view pages-->
-		<div ng-view></div>
+	<!--Ng-view pages-->
+	<div ng-view></div>
 
-		<!-- footer page-->
-		<section id="footer">
-			<div class="footer-center">
-				<div class="row">
-					<div class="column col-xs-12 col-sm-6 col-md-4 col-lg-3">
-						<div class="box contact-us">
-							<div class="box-heading"><span>Contact Us</span></div>
-							<div class="box-content">
-								<p>Feel free to email us to provide some feedback on our website, give us any suggestions to improve our sevices, or to just say hello!</p>
+	<!-- footer page-->
+	<section id="footer" >
+		<div class="footer-center" ng-controller="FooterCtrl as footer">
+			<div class="row">
+				<div class="column col-xs-12 col-sm-6 col-md-4 col-lg-3">
+					<div class="box contact-us">
+						<div class="box-heading"><span>Contact Us</span></div>
+						<div class="box-content">
+							<p>Feel free to email us to provide some feedback on our website, give us any suggestions to improve our sevices, or to just say hello!</p>
 
-								<p>Phone: +9100000000</p>
+							<p>Phone: +9100000000</p>
 
-								<p>Email: contact@planisto.in</p>
+							<p>Email: contact@planisto.in</p>
+							<div  layout="column">
 								
-								<section layout="row" layout-sm="column" layout-align="left center" layout-wrap>
-									<md-icon md-svg-icon="images/material-design/svg/facebook56.svg" style="color: #0F0;" aria-label="Alarm Icon"></md-icon>
-									<md-icon md-svg-icon="images/material-design/svg/google120.svg" style="color: #0F0;" aria-label="Alarm Icon"></md-icon>
-									<md-icon md-svg-icon="images/material-design/svg/facebook56.svg" style="color: #0F0;" aria-label="Alarm Icon"></md-icon>
-									<md-icon md-svg-icon="images/material-design/svg/facebook56.svg" style="color: #0F0;" aria-label="Alarm Icon"></md-icon>
+								<div class="lock-size" layout="row" layout-align="center center">
+									<md-fab-speed-dial md-open=false md-direction="right"
+									ng-class="md-fling">
+									<md-fab-trigger>
+									<md-button aria-label="menu" class="md-fab">
+									<md-icon md-svg-src="images/material-design/svg/menu55.svg"></md-icon>
+								</md-button>
+							</md-fab-trigger>
+							<md-fab-actions>
+							<md-button aria-label="Twitter" class="md-fab md-raised md-mini Twitter">
+							<md-icon md-svg-src="images/material-design/svg/twitter47.svg" aria-label="Twitter" style="color: #00aced;"></md-icon>
+						</md-button>
+						<md-button aria-label="Facebook" class="md-fab md-raised md-mini">
+						<md-icon class= "facebook" md-svg-src="images/material-design/svg/facebook56.svg" aria-label="Facebook" style="color: #3b5998;"></md-icon>
+					</md-button>
+					<md-button aria-label="Google Hangout" class="md-fab md-raised md-mini">
+					<md-icon class="hangout" md-svg-src="images/material-design/svg/google120.svg" aria-label="Google Hangout" style="color: #dd4b39;"></md-icon>
+				</md-button>
+			</md-fab-actions>
+		</md-fab-speed-dial>
+	</div>
+</div>
 
-								</section> 
-								      
-							</div>
-						</div>
-					</div>
-					<div class="column col-xs-12 col-sm-6 col-md-6 col-lg-4">
-						<div class="box">
-							<div class="box-heading"><span>Customer Service</span></div>
-							<div class="box-content">
-								<ul class="list">
-									<li><md-button class="md-primary" ng-href="#contact">contact us</md-button></li>
-									<li><md-button class="md-primary" ng-href="#azad">azad</md-button></li>
-									<li><a href="#azad">Return Policy</a></li>
-									<li><a href="javascript:;" data-toggle="modal" data-target="#loginModal">login</a></li>
-									<li><a href="http://demopavothemes.com/pav_floral/index.php?route=product/manufacturer">Brands</a></li>
-									<li><a href="http://demopavothemes.com/pav_floral/index.php?route=account/voucher">Gift Vouchers</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="column col-xs-12 col-sm-6 col-md-4 col-lg-3">
-					</div>
-				</div>
-			</div>
-		</section>
-		<!--Login section-->
-		<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true" ng-controller="LoginCtrl">
-			<div class="modal-dialog">
-				<div class="login-box">
-					<div class="lb-header">
-						<a href="javascript:;" ng-class="{'active' : tab === 1}" id="login-box-link" ng-click="tab = 1">Login</a>
-						<a href="javascript:;" id="signup-box-link" ng-class="{'active' : tab === 2}" ng-click="tab = 2">Sign Up</a>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close" data-target="#loginModal">
-							<span class="fa fa-times" style="float:right;cursor:pointer;" ></span>
-						</button>
-					</div>
-					<div class="social-login">
-						<md-icon md-svg-icon="images/material-design/svg/facebook56.svg" style="color: #0F0;" aria-label="facebook"></md-icon>
-						<a href="#">
-							<i class="fa fa-google-plus fa-lg"></i>
-							Google+ Login
-						</a>
-					</div>
-					<form class="email-login" ng-init="tab = 1" ng-show="tab === 1">
-						<div layout="row">
-							<md-input-container flex>
-							<input type="email" ng-model="user.email" placeholder="Email" ng-required="true"></md-input-container>
-						</div>
-						<div layout="row">
-							<md-input-container flex>
-							<input type="password" ng-model="user.paasword" placeholder="Password" ng-required="true"></md-input-container>
-						</div>
-						<div layout="row" >
-							<div>
-								<md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">Remember Me</md-checkbox>
-							</div>
-						</div>
-						<div class="u-form-group">
-							<button>Log in</button>
-						</div>
-						<div class="u-form-group">
-							<a href="#" class="forgot-password">Forgot password?</a>
-						</div>
-					</form>
-					<form class="email-signup" ng-show="tab === 2">
-						<div layout="row">
-							<md-input-container flex>
-							<input type="email" ng-model="newUser.email" placeholder="Email" ng-required="true"> 
-						</md-input-container>
-					</div>
-					<div layout="row">
-						<md-input-container flex>
-						<input type="password" ng-model="newUser.paasword" placeholder="Password" ng-required="true"></md-input-container>
-					</div>
-					<div layout="row">
-						<md-input-container flex>
-						<input type="password" ng-model="newUser.cnfPaasword" placeholder="Confirm Password" ng-required="true"></md-input-container>
-					</div>
-					<div class="u-form-group">
-						<button>Sign Up</button>
-					</div>
-				</form>
-			</div>
+</div>
+</div>
+</div>
+<div class="column col-xs-12 col-sm-6 col-md-6 col-lg-4">
+	<div class="box">
+		<div class="box-heading"><span>Customer Service</span></div>
+		<div class="box-content">
+			<ul class="list">
+				<li><md-button class="md-primary" ng-href="#contact">contact us</md-button></li>
+				<li><md-button class="md-primary" ng-href="#azad">azad</md-button></li>
+				<li><a href="#azad">Return Policy</a></li>
+				<li><a href="javascript:;" data-toggle="modal" data-target="#loginModal">login</a></li>
+				<li><a href="http://demopavothemes.com/pav_floral/index.php?route=product/manufacturer">Brands</a></li>
+				<li><a href="http://demopavothemes.com/pav_floral/index.php?route=account/voucher">Gift Vouchers</a></li>
+			</ul>
 		</div>
 	</div>
+</div>
+<div class="column col-xs-12 col-sm-6 col-md-4 col-lg-3">
+</div>
+</div>
+</div>
+</section>
+<!--Login section-->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true" ng-controller="LoginCtrl">
+	<div class="modal-dialog">
+		<div class="login-box">
+			<div class="lb-header">
+				<a href="javascript:;" ng-class="{'active' : tab === 1}" id="login-box-link" ng-click="tab = 1">Login</a>
+				<a href="javascript:;" id="signup-box-link" ng-class="{'active' : tab === 2}" ng-click="tab = 2">Sign Up</a>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close" data-target="#loginModal">
+					<span class="fa fa-times" style="float:right;cursor:pointer;" ></span>
+				</button>
+			</div>
+			<div class="social-login">
+				<md-icon md-svg-icon="images/material-design/svg/facebook56.svg" style="color: #0F0;" aria-label="facebook"></md-icon>
+				<a href="#">
+					<i class="fa fa-google-plus fa-lg"></i>
+					Google+ Login
+				</a>
+			</div>
+			<form class="email-login" ng-init="tab = 1" ng-show="tab === 1">
+				<div layout="row">
+					<md-input-container flex>
+					<input type="email" ng-model="user.email" placeholder="Email" ng-required="true"></md-input-container>
+				</div>
+				<div layout="row">
+					<md-input-container flex>
+					<input type="password" ng-model="user.paasword" placeholder="Password" ng-required="true"></md-input-container>
+				</div>
+				<div layout="row" >
+					<div>
+						<md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">Remember Me</md-checkbox>
+					</div>
+				</div>
+				<div class="u-form-group">
+					<button>Log in</button>
+				</div>
+				<div class="u-form-group">
+					<a href="#" class="forgot-password">Forgot password?</a>
+				</div>
+			</form>
+			<form class="email-signup" ng-show="tab === 2">
+				<div layout="row">
+					<md-input-container flex>
+					<input type="email" ng-model="newUser.email" placeholder="Email" ng-required="true"> 
+				</md-input-container>
+			</div>
+			<div layout="row">
+				<md-input-container flex>
+				<input type="password" ng-model="newUser.paasword" placeholder="Password" ng-required="true"></md-input-container>
+			</div>
+			<div layout="row">
+				<md-input-container flex>
+				<input type="password" ng-model="newUser.cnfPaasword" placeholder="Confirm Password" ng-required="true"></md-input-container>
+			</div>
+			<div class="u-form-group">
+				<button>Sign Up</button>
+			</div>
+		</form>
+	</div>
+</div>
+</div>
 </div>
 <!-- build:js(.) scripts/vendor.js -->
 <!-- bower:js -->
