@@ -8,13 +8,13 @@
  * Controller of the planistoApp
  */
  angular.module('planistoApp')
- .controller('MainCtrl', function ($scope, searchService, $q, $location, $rootScope, $timeout,$http) {
+ .controller('MainCtrl', function ($scope, searchService, $q, $location, $rootScope, $timeout, $http, UserInfo) {
   this.awesomeThings = [
   'HTML5 Boilerplate',
   'AngularJS',
   'Karma'
   ];
-  $scope.selectedItem;
+  $scope.selectedItem='';
 
   $scope.address = "";
   $scope.lat = "";
@@ -60,27 +60,26 @@
     });
   }
   $scope.cancelRegisterEvent=function(){
-
+    $scope.user.firstName='';
   }
 
-
-  
   $scope.RegisterEvent =function(){
-    $scope.firstname=$scope.user.firstName;
-    $timeout(redirect,180);
+
+   UserInfo.setFirstName($scope.user.firstName);
+    /*UserInfo.setLastName($scope.user.LastName);
+    UserInfo.setEmailId($scope.user.Email);
+    UserInfo.setMobile($scope.user.Mobile);*/
+    $timeout(redirect,300);
   }
-  function redirect($scope) {
-    
+
+  function redirect() {
+
     $location.path("/user");
   }
+
+
 })
 .controller('FooterCtrl', function ($scope) {
 
-})
-.controller('RegisterEventCtrl', function ($scope) {
-
-})
-.controller('UserAfterLoginCtrl', function ($scope) {
-$scope.azad=$scope.user.firstName;
 })
 ;

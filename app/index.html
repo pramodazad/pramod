@@ -47,7 +47,7 @@
 							<div  layout="column">
 								
 								<div class="lock-size" layout="row" layout-align="center center">
-									<md-fab-speed-dial md-open=false md-direction="right"
+									<md-fab-speed-dial md-direction="right"
 									ng-class="md-fling">
 									<md-fab-trigger>
 									<md-button aria-label="menu" class="md-fab">
@@ -92,6 +92,7 @@
 </div>
 </div>
 </section>
+
 <!--Login section-->
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true" ng-controller="LoginCtrl">
 	<div class="modal-dialog">
@@ -172,6 +173,14 @@
 <script src="bower_components/moment/moment.js"></script>
 <script src="bower_components/fullcalendar/dist/fullcalendar.js"></script>
 <script src="bower_components/angular-ui-calendar/src/calendar.js"></script>
+<script src="bower_components/angular-ui-scroll/dist/ui-scroll.js"></script>
+<script src="bower_components/angular-ui-scrollpoint/dist/scrollpoint.js"></script>
+<script src="bower_components/angular-ui-event/dist/event.js"></script>
+<script src="bower_components/angular-ui-mask/dist/mask.js"></script>
+<script src="bower_components/angular-ui-validate/dist/validate.js"></script>
+<script src="bower_components/angular-ui-indeterminate/dist/indeterminate.js"></script>
+<script src="bower_components/angular-ui-uploader/dist/uploader.js"></script>
+<script src="bower_components/angular-ui-utils/index.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
@@ -185,6 +194,8 @@
 <script src="scripts/controllers/login.js"></script>
 <script src="scripts/controllers/results.js"></script>
 <script src="scripts/controllers/UserPage.js"></script>
+<script src="scripts/services/userInfo.js"></script>
+<script src="scripts/services/authentication.js"></script>
 <!-- endbuild -->
 
 </body>

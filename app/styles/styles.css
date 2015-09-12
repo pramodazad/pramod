@@ -89,7 +89,9 @@ a {
         color: #333;
     }
 }
-
+.navbar-default .navbar-toggle p{
+  margin: 0px;
+}
 .pricing-table {
     margin-bottom: 20px;
     background-color: #fcfcfc;

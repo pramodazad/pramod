@@ -19,7 +19,7 @@
 
 					<ul class="nav navbar-nav navbar-right">
 						
-						<li><h4>User {{azad}}</h4></li>
+						<li><p ng-bind="firstName"></p></li>
 						<li class="dropdown">
 							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><md-icon md-svg-icon="images/material-design/svg/settings49.svg" style="color: blue;" aria-label="Setting Icon"></md-icon> <span class="caret"></span></a>
 							<ul class="dropdown-menu">
@@ -65,6 +65,15 @@
 	<md-button ng-click="toggleRight()"
 	class="md-primary">
 	Toggle right
+</md-button>
+
+<h2>Signin to ngroad</h2> <div google-signin
+  client-id='135288149420-ap78peullte92sen7b0essfte1pm1hkh'
+after-signin="signedIn(oauth)"></div> <pre>{{ user | json }}</pre>
+
+<md-button ng-click="signedIn()"
+	class="md-primary">
+	signin
 </md-button>
 
 <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right" style="height: 400px;top: 100px;">

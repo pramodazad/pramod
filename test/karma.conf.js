@@ -39,6 +39,14 @@ module.exports = function(config) {
       'bower_components/moment/moment.js',
       'bower_components/fullcalendar/dist/fullcalendar.js',
       'bower_components/angular-ui-calendar/src/calendar.js',
+      'bower_components/angular-ui-scroll/dist/ui-scroll.js',
+      'bower_components/angular-ui-scrollpoint/dist/scrollpoint.js',
+      'bower_components/angular-ui-event/dist/event.js',
+      'bower_components/angular-ui-mask/dist/mask.js',
+      'bower_components/angular-ui-validate/dist/validate.js',
+      'bower_components/angular-ui-indeterminate/dist/indeterminate.js',
+      'bower_components/angular-ui-uploader/dist/uploader.js',
+      'bower_components/angular-ui-utils/index.js',
       'bower_components/bootstrap/dist/js/bootstrap.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
@@ -63,12 +71,12 @@ module.exports = function(config) {
     // - PhantomJS
     // - IE (only Windows)
     browsers: [
-      "PhantomJS"
+      "Chrome"
     ],
 
     // Which plugins to enable
     plugins: [
-      "karma-phantomjs-launcher",
+      "karma-chrome-launcher",
       "karma-jasmine"
     ],
 
