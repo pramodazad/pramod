@@ -24,13 +24,24 @@
 	<!-- build:css(.tmp) styles/main.css -->
 	<link rel="stylesheet" href="styles/styles.css">
 	<link rel="stylesheet" href="styles/flaticon.css">
+	<link rel="stylesheet" href="styles/refineslide.css">
+	<!-- <link rel="stylesheet" href="styles/refineslide-theme-dark.css"> -->
 	<!-- <link rel="stylesheet" href="styles/font-awesome.min.css">	 -->
 	<!-- endbuild -->
 </head>
 <body ng-app="planistoApp" id="page-top">
+	<div layout="column" style="height:600px">
+  <md-toolbar md-scroll-shrink ng-if="true" >
+    <div class="md-toolbar-tools">
+      <h3>
+        <span>Planisto.in</span>
+      </h3>
+    </div>
+  </md-toolbar>
 	<!--Ng-view pages-->
-	<div ng-view></div>
-
+	<div class="view-container">
+		<div ng-view class="view-frame"></div>
+	</div>
 	<!-- footer page-->
 	<section id="footer" >
 		<div class="footer-center" ng-controller="FooterCtrl as footer">
@@ -51,18 +62,18 @@
 									ng-class="md-fling">
 									<md-fab-trigger>
 									<md-button aria-label="menu" class="md-fab">
-									<md-icon md-svg-src="images/material-design/svg/menu55.svg"></md-icon>
+									<md-icon md-svg-src="menu"></md-icon>
 								</md-button>
 							</md-fab-trigger>
 							<md-fab-actions>
 							<md-button aria-label="Twitter" class="md-fab md-raised md-mini Twitter">
-							<md-icon md-svg-src="images/material-design/svg/twitter47.svg" aria-label="Twitter" style="color: #00aced;"></md-icon>
+							<md-icon md-svg-src="twitter" aria-label="Twitter" style="color: #00aced;"></md-icon>
 						</md-button>
 						<md-button aria-label="Facebook" class="md-fab md-raised md-mini">
-						<md-icon class= "facebook" md-svg-src="images/material-design/svg/facebook56.svg" aria-label="Facebook" style="color: #3b5998;"></md-icon>
+						<md-icon class= "facebook" md-svg-src="facebook" aria-label="Facebook" style="color: #3b5998;"></md-icon>
 					</md-button>
 					<md-button aria-label="Google Hangout" class="md-fab md-raised md-mini">
-					<md-icon class="hangout" md-svg-src="images/material-design/svg/google120.svg" aria-label="Google Hangout" style="color: #dd4b39;"></md-icon>
+					<md-icon class="hangout" md-svg-src="google" aria-label="Google Hangout" style="color: #dd4b39;"></md-icon>
 				</md-button>
 			</md-fab-actions>
 		</md-fab-speed-dial>
@@ -194,8 +205,9 @@
 <script src="scripts/controllers/login.js"></script>
 <script src="scripts/controllers/results.js"></script>
 <script src="scripts/controllers/UserPage.js"></script>
-<script src="scripts/services/userInfo.js"></script>
+<script src="scripts/services/UserInfo.js"></script>
 <script src="scripts/services/authentication.js"></script>
+<script src="scripts/jquery.refineslide.js"></script>
 <!-- endbuild -->
 
 </body>

@@ -1,37 +1,86 @@
-<div class="row-off row-off-left">
+<script>
+$(document).ready(function () {
+  $('.rs-slider').refineSlide({
+      transition            : 'cubeV',// String (default 'cubeV'): Transition type ('custom', random', 'cubeH', 'cubeV', 'fade', 'sliceH', 'sliceV', 'slideH', 'slideV', 'scale', 'blockScale', 'kaleidoscope', 'fan', 'blindH', 'blindV')
+      maxWidth              : 800,
+      autoPlay              : true,    // Int (default false): Auto-cycle slider
+      delay                 : 2000,     // Int (default 5000) Time between slides in ms
+      transitionDuration    : 800, 
+    });
+});
+</script>
+<div class="bg-heading inverse" id="home">
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+      <div class="container">
+        <div class="section-silder group">
+          <div class="rs-wrap">
+            <div class="rs-slide">
+              <ul id="images" class="rs-slider no-margin">
+                <li class="group active bg-heading-color rs-slide-0" style="z-index: 1; opacity: 0;">
+                  <div class="row slider-inner">
+                    <div class="col-sm-4 slider-list">
+                      <ul class="icons-ul" id="top-ul">
+                        <li><i class="icon-li icon-heart"></i>Flat design</li>
+                        <li><i class="icon-li icon-cloud-download"></i>Responsive</li>
+                        <li><i class="icon-li icon-google-plus-sign"></i>Google web fonts</li>
+                        <li><i class="icon-li icon-twitter-sign"></i>Twitter Bootstrap</li>
+                        <li><i class="icon-li icon-ok"></i>Font Awesome Icons</li>
+                      </ul>
+                    </div>
+                    <div class="col-sm-8 tp">
+
+                      <img src="images/intro-bg.jpg" class="video-player border-belize-hole rs-slide-image"  style="vertical-align: bottom;" width="600" alt="Image">
+                    </div>
+                    
+                  </div>
+                </li>
+                <li class="group bg-heading-color rs-slide-1" style="z-index: 2; opacity: 1;">
+                  <div class="row slider-inner">
+                    <div class="col-sm-4 responsive-text">
+                      <h2>Works well on all Platforms!</h2>
+                      <div class="responsive-small-text">
+                        <h3>Its easy on eyes and responsive!</h3>
+                      </div>
+                    </div>
+                    <div class=" col-sm-8 tp">
+                      <img src="img/intro-bg1.jpg" style="vertical-align: bottom;" width="600" alt="Image" class="rs-slide-image">
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<header>
+  <h2 class="section-heading-underline">How we work</h2>
+</header>
+
+
+
+
+<!--start of main page-->
+<!-- <div class="row-off row-off-left">
   <div id="header">
     <div id="header-main">
       <section  class="plan-button-section" layout="row" layout-sm="column" layout-align="center center" layout-wrap>
         <h2>Planisto, the best way to plan your event</h2>
       </section>
-      <!-- <img src="images/intro-bg.jpg" alt="" class="img-circle img30_30"> -->
-      <!-- <div class="row">
-        <div class="col-md-3 col-xsm-6">
-          <section class="pricing-table pricing-table-primary">
-            <header><h2>Free</h2></header>
-            <p class="pricing-price"><span class="pricing-sign">$</span>0.00<span class="pricing-sub">/mo</span></p>
-            <div class="pricing-plan-details">
-              <p class="pricing-lead">Including</p>
-              <ul>
-                <li>No Support</li>
-                <li>1 Website</li>
-                <li>10GB Disk Space</li>
-                <li>3 Database</li>
-                <li>1 Email Address</li>
-              </ul>                            
-            </div>
-            <footer><a href="javascript:;" class="btn btn-primary">Buy now</a></footer>
-          </section>
-        </div>
-      </div> -->
+
       <section  class="plan-button-section" layout="row" layout-sm="column" layout-align="center center" layout-wrap>
 
         <md-button class="md-raised md-primary" data-toggle="modal" data-target="#RegisterEvent">Plan an Event</md-button>
-        
+
       </section>
     </div>
   </div>
 </div>
+-->
 <!--Register Event Modal-->
 <div class="modal fade" id="RegisterEvent" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -82,6 +131,69 @@
 </div>
 </div>
 <!--End Register Event Modal-->
+<div class="row tiles">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-3 bg-turquoise">
+    <div class="tile" id="div1">
+      <i class="ti-filter tile-icon"></i>
+      <h2>Register you event</h2>
+      <p>Tell us the date of your big celebration</p>
+    </div>
+    <div class="details"><p>Tell us the date and place of your function and make a rough sketch of your plans. based on that we will search service providers in that area.</p></div>
+  </div>
+  <div class="col-sm-3 bg-emerland">
+    <div class="tile">
+      <i class="icon-asterisk tile-icon"></i>
+      <h2>Add the services you required</h2>
+      <p>Give us details of what want. Your requirement will be sent to the service providers</p>
+    </div>
+    <div class="details"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at tortor ut enim aliquam accumsan vitae ut dui. Sed et massa ipsum. Maecenas consectetur, purus eu faucibus bibendum, risus lectus rhoncus mi.</p></div>
+  </div>
+  <div class="col-sm-3 bg-peter-river">
+    <a href="#sahusoft" data-toggle="modal">
+      <div class="tile">
+        <i class=" icon-lightbulb tile-icon"></i>
+        <h2>Select the service providers</h2>
+        <p>For every job select service providers to cater your needs</p>
+      </div>
+      <div class="details"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at tortor ut enim aliquam accumsan vitae ut dui. Sed et massa ipsum. Maecenas consectetur, purus eu faucibus bibendum, risus lectus rhoncus mi.</p></div>
+    </a>
+  </div>
+</div>
+<div class="row tiles">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-3 bg-sun-flower no-left-margin">
+    <a href="#mlo" data-toggle="modal">
+      <div class="tile">
+        <i class="icon-sitemap tile-icon"></i>
+        <h2>Book for your event</h2>
+        <p>book all the service providers</p>
+      </div>
+      <div class="details"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at tortor ut enim aliquam accumsan vitae ut dui. Sed et massa ipsum. Maecenas consectetur, purus eu faucibus bibendum, risus lectus rhoncus mi.</p></div>
+    </a>
+  </div>
+  <div class="col-sm-3 bg-orange">
+    <a href="#taskize" data-toggle="modal">
+      <div class="tile">
+        <i class="icon-tasks tile-icon"></i>
+        <h2>Enjoy your event</h2>
+        <p>While our service providers will take care of all your needs</p>
+      </div>
+      <div class="details"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at tortor ut enim aliquam accumsan vitae ut dui. Sed et massa ipsum. Maecenas consectetur, purus eu faucibus bibendum, risus lectus rhoncus mi.</p></div>
+    </a>
+  </div>
+  <div class="col-sm-3 bg-alizarin">
+    <a href="#meowapps" data-toggle="modal">
+      <div class="tile">
+        <i class="icon-group tile-icon"></i>
+        <h2>Tell your friends about us</h2>
+        <p>Tell your friends</p>
+      </div>
+      <div class="details"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at tortor ut enim aliquam accumsan vitae ut dui. Sed et massa ipsum. Maecenas consectetur, purus eu faucibus bibendum, risus lectus rhoncus mi.</p></div>
+    </a>
+  </div>
+</div>
+
 <!--How we work section-->
 <div id="features" class="features">
   <header>
@@ -91,7 +203,7 @@
     <div class="row">
       <div class="feature-item col-md-4 text-center">
         <div class="icon-container"><span class="ti-palette"></span></div>
-        <md-icon md-svg-icon="images/material-design/svg/settings49.svg" style="color: red;" class="s24" aria-label="Setting Icon"></md-icon>
+        <md-icon md-svg-icon="Setting" style="color: red;" aria-label="Setting Icon"></md-icon>
         <h3>Register you event</h3>
         <div class="desc">
           <p>Tell us the date of your big celebration</p>
@@ -99,14 +211,14 @@
       </div>
       <div class="feature-item col-md-4 text-center">
         <div class="icon-container"><span class="ti-layout"></span></div>
-        <md-icon md-svg-icon="images/material-design/svg/add179.svg" style="color: red;" class="s24" aria-label="Setting Icon"></md-icon>
+        <md-icon md-svg-icon="Add" style="color: red;" class="s24" aria-label="Setting Icon"></md-icon>
         <h3>Add the services you required</h3>
         <div class="desc">
           <p>Give us details of what want. Your requirement will be sent to the service providers</p>
         </div>
       </div>
       <div class="feature-item col-md-4 text-center">
-        <md-icon md-svg-icon="images/material-design/svg/been.svg" style="color: red;" class="s24" aria-label="Setting Icon"></md-icon>
+        <md-icon md-svg-icon="been" style="color: red;" class="s24" aria-label="Setting Icon"></md-icon>
         <div class="icon-container"><span class="ti-desktop"></span></div>
         <h3>Select the service providers</h3>
         <div class="desc">
