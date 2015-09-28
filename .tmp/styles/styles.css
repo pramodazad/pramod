@@ -284,6 +284,7 @@ tile:hover .details{
 .bannerHolder:hover {
   left:-1px;
   top:-3px;
+  z-index: 1;
   box-shadow:0 0 4px 2px rgba(0,0,0,0.15);
   transform:scale(1.04);
   -webkit-transform:scale(1.04);
@@ -368,6 +369,7 @@ tile:hover .details{
 
   .testimonials p{
     font-size: 32px;
+    color: #E06FE3;
   }
   .testimonials small{
     font-size: 12px;
