@@ -258,6 +258,36 @@ tile:hover .details{
     height: 180px;
     overflow:hidden;
   }
+  .event-section-header {
+    border: 1px solid #333;
+    text-shadow: rgba(0,0,0,0.74902) 0 -1px 1px;
+    background: #464646;
+    background: linear-gradient(to bottom,#464646,#424242);
+    background-image: -ms-linear-gradient(top,#464646,#424242);
+    height: 38px;
+    color: #fff;
+    line-height: 38px;
+    font-size: 16px;
+    font-weight: normal;
+}
+.bannerHolder {
+    /*float: left;*/
+    height: 246px;
+    background: #fff;
+    overflow: hidden;
+    padding: 10px;
+    margin-left: 0;
+    box-shadow: 0 0 2px 0 #d3cbb8;
+    position: relative;
+    
+}
+.bannerHolder:hover {
+  left:-1px;
+  top:-3px;
+  box-shadow:0 0 4px 2px rgba(0,0,0,0.15);
+  transform:scale(1.04);
+  -webkit-transform:scale(1.04);
+}
   /*--------------end main page---------*/
 
 
@@ -658,7 +688,7 @@ tile:hover .details{
     font-size: 23px;
   }
   .text-muted {
-    color: #777;
+    color: black;
   }
   .text-center {
     text-align: center;
@@ -714,6 +744,7 @@ tile:hover .details{
   }
   .size-h2 {
     font-size: 27px;
+    color: black;
   }
   .color-success {
     color: #A9DC8E;

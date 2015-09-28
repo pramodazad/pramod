@@ -358,17 +358,17 @@ options: {
     },
     //htmlclean options
     htmlclean: {
-    options: {
-      protect: /<\!--%fooTemplate\b.*?%-->/g,
-      edit: function(html) { return html.replace(/\begg(s?)\b/ig, 'omelet$1'); }
+      options: {
+        protect: /<\!--%fooTemplate\b.*?%-->/g,
+        edit: function(html) { return html.replace(/\begg(s?)\b/ig, 'omelet$1'); }
+      },
+      deploy: {
+        expand: true,
+        cwd: '<%= yeoman.app %>',
+        src: ['**/*.html'],
+        dest: '<%= yeoman.dist %>'
+      }
     },
-    deploy: {
-      expand: true,
-      cwd: '<%= yeoman.app %>',
-      src: ['**/*.html'],
-      dest: '<%= yeoman.dist %>'
-    }
-  },
 
     // Copies remaining files to places other tasks can use
     copy: {
@@ -382,6 +382,7 @@ options: {
           '*.{ico,png,txt}',
           '.htaccess',
           '*.html',
+          'bower_components/**/*',
         'images/{,*/}*.{webp}',
       'styles/fonts/{,*/}*.*'
       ]
