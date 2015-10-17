@@ -1,9 +1,11 @@
 'use strict';
 
 angular.module('planistoApp')
+
 .constant('ACCESS_LEVELS', {
-pub: 1,
-user: 2 })
+	pub: 1,
+	user: 2 })
+
 .factory('Auth', function ($cookieStore, ACCESS_LEVELS) {
 	var _user = $cookieStore.get('user');
 	var setUser = function(user) {

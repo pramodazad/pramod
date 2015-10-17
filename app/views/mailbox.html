@@ -1,0 +1,63 @@
+<ng-include src="'views/sidebar.html'" scope="" onload=""></ng-include>
+<div id="wrapper">
+
+    <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+            <ng-include src="'views/Topbar.html'" scope="" onload=""></ng-include>
+        </div>
+
+        <div class="wrapper wrapper-content" ng-controller="mailBoxCtrl">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-content mailbox-content">
+                            <ng-include src="'views/email/email-navbar.html'" scope="" onload=""></ng-include>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 animated fadeInRight">
+                    <div class="mail-box-header">
+
+                        <form method="get" action="index.html" class="pull-right mail-search">
+                            <div class="input-group">
+                                <input type="text" class="form-control input-sm" name="search" placeholder="Search email">
+                                <div class="input-group-btn">
+                                    <button type="submit" class="btn btn-sm btn-primary">
+                                        Search
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <h2>
+                            Inbox (16)
+                        </h2>
+                        <div class="mail-tools tooltip-demo m-t-md">
+                            <div class="btn-group pull-right">
+                                <button class="btn btn-white btn-sm"><i class="fa fa-arrow-left"></i></button>
+                                <button class="btn btn-white btn-sm"><i class="fa fa-arrow-right"></i></button>
+
+                            </div>
+                            <button class="btn btn-white btn-sm" tooltip-placement="left" uib-tooltip="On the Left!"><i class="fa fa-refresh" ng-model="$parent.fooModel"></i> Refresh</button>
+                            <button class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="Mark as read"><i class="fa fa-eye"></i> </button>
+                            <button class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="Mark as important"><i class="fa fa-exclamation"></i> </button>
+                            <button class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="Move to trash"><i class="fa fa-trash-o"></i> </button>
+
+                        </div>
+                    </div>
+                    <div class="mail-box">
+
+                        <table id= "mail-table" class="table table-hover table-mail">
+                            <tbody ng-repeat="data in value">
+                                <tr id="{{$index}}" tablerow unread={{data.unread}} sender={{data.sender}} subject={{data.subject}} time={{data.time}} number={{$index}}></tr>
+                              
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

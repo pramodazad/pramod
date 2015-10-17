@@ -1,0 +1,98 @@
+<script type="text/javascript">
+$('.collapse-link').click(function () {
+    var ibox = $(this).closest('div.ibox');
+    var button = $(this).find('i');
+    var content = ibox.find('div.ibox-content');
+    content.slideToggle(200);
+    button.toggleClass('ti-angle-down').toggleClass('ti-angle-up');
+    ibox.toggleClass('').toggleClass('border-bottom');
+    setTimeout(function () {
+        ibox.resize();
+        ibox.find('[id^=map-]').resize();
+    }, 50);
+});
+</script>
+<!--azad-->
+
+<ng-include src="'views/sidebar.html'" scope="" onload=""></ng-include>
+<div id="page-wrapper" class="gray-bg">
+    <div class="row border-bottom">
+        <ng-include src="'views/Topbar.html'" scope="" onload=""></ng-include>
+    </div>
+<div class="row">
+    <section>
+        <div class="ibox collapsed">
+            <div class="ibox-title">
+                <h5>Guest Management</h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="ti-angle-down"></i>
+                    </a>
+
+                </div>
+            </div>
+            <div class="ibox-content" style="display: none;">
+
+                <p>
+                    Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. </p>
+                    <p>
+                        Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="ibox collapsed">
+                <div class="ibox-title">
+                    <h5>Example of initial collapsed panel</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="ti-angle-down"></i>
+                        </a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-wrench"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li><a href="#">Config option 1</a>
+                            </li>
+                            <li><a href="#">Config option 2</a>
+                            </li>
+                        </ul>
+                        <a class="close-link">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content" style="display: none;">
+
+                    <p>
+                        Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. </p>
+                        <p>
+                            Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="ibox collapsed">
+                    <div class="ibox-title">
+                        <h5>Guest Management</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="ti-angle-down"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                    <div class="ibox-content" style="display: none;">
+
+                        <p>
+                            Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. </p>
+                            <p>
+                                Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div> 
+        </div>

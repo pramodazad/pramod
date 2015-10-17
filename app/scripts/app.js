@@ -16,12 +16,12 @@
               'ngMessages',
               'ngResource',
               'ngRoute',
-              'ngSanitize',
-              'ngTouch',
+              // 'ngSanitize',
+              // 'ngTouch',
               'ngMaterial',
-              'angularModalService',
+              'ui.bootstrap',
+              // 'angularModalService',
               'google.places',
-              
               ])
              .config(function ($routeProvider) {
               $routeProvider
@@ -37,7 +37,7 @@
                 templateUrl: 'views/azad.html'
               })
               .when('/login', {
-                templateUrl: 'views/login1.html',
+                templateUrl: 'views/login.html',
                 controller: 'LoginCtrl',
               })
               .when('/about', {
@@ -58,10 +58,31 @@
               .when('/SProfile', {
                 templateUrl: 'views/utils/Seller/SellerProfile.html'
               })
+              .when('/wedding', {
+                templateUrl: 'views/wedding.html'
+              })
+              .when('/wedding/dashboard', {
+                templateUrl: 'views/wedding-dashbord.html'
+              })
+              .when('/wedding/dashboard/guest', {
+                templateUrl: 'views/guest.html'
+              })
+              .when('/wedding/pinboard', {
+                templateUrl: 'views/pin_board.html'
+              })
+              .when('/blank', {
+                templateUrl: 'views/blank.html'
+              })
               .when('/search', {
                 templateUrl: 'views/results.html',
                 controller: 'ResultsCtrl',
                 controllerAs: 'results'
+              })
+              .when('/email', {
+                templateUrl: 'views/mailbox.html'                
+              })
+              .when('/email-view', {
+                templateUrl: 'views/mail_detail.html'                
               })
               .otherwise({
                 redirectTo: '/'
@@ -112,8 +133,13 @@
               $mdThemingProvider.theme('default')
               .primaryPalette('amazingPaletteName')
             })
+            //to put FB login
+            
+
+            //run to put cookies
             .run(function ($http, $rootScope, $location, Auth, $cookies, $log) 
             {
+
               var GUID = String($http.get('http://localhost:4100/init/public'));
 
               $cookies.put('GUID', GUID.toString());
@@ -129,6 +155,7 @@
               
               $rootScope.$on('$routeChangeStart', function(evt, next, curr) 
               {
+
                 if (!Auth.isAuthorized(next.access_level)) 
                   { if (Auth.isLoggedIn()) 
                     {
@@ -137,6 +164,65 @@
           { $location.path('/login');
         }
       } 
-    })
+    });
+            })
+            .run(function ($rootScope){
+              $rootScope.minPanel = function (){
+                angular.element(document).ready(function () {
+                  // Add body-small class if window less than 768p
+
+                  // Collapse ibox function
+                  angular.element('.collapse-link').click(function () {
+                    var ibox = angular.element(this).closest('div.ibox');
+                    var button = angular.element(this).find('i');
+                    var content = ibox.find('div.ibox-content');
+                    content.slideToggle(200);
+                    button.toggleClass('ti-angle-down').toggleClass('ti-angle-down');
+                    ibox.toggleClass('').toggleClass('border-bottom');
+                    setTimeout(function () {
+                      ibox.resize();
+                      ibox.find('[id^=map-]').resize();
+                    }, 50);
+                    e.stopPropagation();
+                  });
+                  
+                  angular.element(window).on('scroll load', function() {
+
+                   if (angular.element(window).scrollTop() > 0) {
+                     angular.element('#mainnav').addClass('affix');
+                   }
+                   else {
+                     angular.element('#mainnav').removeClass('affix');
+
+                   }
+                 });
+                  // Close ibox function
+                  
+                });
+          }
+          $rootScope.closePanel = function (){
+            angular.element('.close-link').click(function () {
+              var content = angular.element(this).closest('note');
+              content.remove();
             });
+          }
+        })
+            
+            // .run(function ($rootScope){
+            //   $rootScope.closePanel = function (){
+            //     $('.collapse-link').click(function () {
+            //       var ibox = $(this).closest('div.ibox');
+            //       var button = $(this).find('i');
+            //       var content = ibox.find('div.ibox-content');
+            //       content.slideToggle(200);
+            //       button.toggleClass('ti-angle-down').toggleClass('ti-angle-up');
+            //       ibox.toggleClass('').toggleClass('border-bottom');
+            //       setTimeout(function () {
+            //         ibox.resize();
+            //         ibox.find('[id^=map-]').resize();
+            //       }, 50);
+            //     });
+            //   }
+            // })
+            ;
 

@@ -1,0 +1,58 @@
+<ng-include src="'views/sidebar.html'" scope="" onload=""></ng-include>
+
+<div id="page-wrapper" class="gray-bg">
+    <div class="row border-bottom">
+        <ng-include src="'views/Topbar.html'" scope="" onload=""></ng-include>
+    </div>
+    
+    <div class="row" ng-controller="pinCtrl">
+
+        <div class=" col-sm-4 col-sm-offset-2" >
+            <div class="ibox collapsed">
+                <div class="ibox-title">
+                    <h5>Add a pin</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link" ng-click="minPanel()">
+                            <i class="ti-angle-down"></i>
+                        </a>
+
+                    </div>
+                </div>
+                <div class="ibox-content" style="display: none;">
+                    <md-input-container flex>
+                    <label>title</label>
+                    <input required ng-model="title">
+                </md-input-container>
+                <md-input-container flex>
+                <label>message</label>
+                <textarea required ng-model="message" columns="1" md-maxlength="150"></textarea>
+            </md-input-container>
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                <md-button class="md-fab" aria-label="Comment" ng-click="addPin(title,message)">
+              <md-icon md-svg-src="check" aria-label="check" style="color: #3b5998;"></md-icon>
+          </md-button>
+      </section>
+  </div>
+</div>
+
+</div>
+
+<div class="col-lg-12">
+    <div class="wrapper wrapper-content animated fadeInUp">
+        <ul class="notes">
+            <li ng-repeat="pin in value">
+                <div class="note">
+                    <small>12:03:28 12-04-2014</small>
+                    <h4>{{pin.title}}</h4>
+                    <p>{{pin.message}}</p>
+                    <a class="close-link" ng-click="closePanel()"><i class="ti-trash"></i></a>
+                </div>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+</div>
+</div>
+</div>
+<ng-include src="'views/footer.html'" scope="" onload=""></ng-include>

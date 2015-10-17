@@ -79,7 +79,5 @@
 
 
 })
-.controller('FooterCtrl', function ($scope) {
 
-})
 ;

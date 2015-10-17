@@ -45,16 +45,16 @@ module.exports = function (grunt) {
       }
     },
     jsTest: {
-    files: ['test/spec/{,*/}*.js'],
-    tasks: ['newer:jshint:test', 'karma']
-  },
-  styles: {
-  files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
-  tasks: ['newer:copy:styles', 'autoprefixer']
-},
-gruntfile: {
-  files: ['Gruntfile.js']
-},
+      files: ['test/spec/{,*/}*.js'],
+      tasks: ['newer:jshint:test', 'karma']
+    },
+    styles: {
+      files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
+      tasks: ['newer:copy:styles', 'autoprefixer']
+    },
+    gruntfile: {
+      files: ['Gruntfile.js']
+    },
 livereload: {
   options: {
     livereload: '<%= connect.options.livereload %>'
@@ -66,6 +66,8 @@ livereload: {
 ]
 }
 },
+
+
 
     // The actual grunt server settings
     connect: {
@@ -203,53 +205,62 @@ livereload: {
       }
     },
 
-    // Renames files for browser caching purposes
-    filerev: {
-      dist: {
-        src: [
-      '<%= yeoman.dist %>/scripts/{,*/}*.js',
-    '<%= yeoman.dist %>/styles/{,*/}*.css',
-  '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
-  '<%= yeoman.dist %>/styles/fonts/*'
-  ]
-}
-},
-
+    
     // Reads HTML for usemin blocks to enable smart builds that automatically
     // concat, minify and revision files. Creates configurations in memory so
     // additional tasks can operate on them
     useminPrepare: {
-      html: '<%= yeoman.app %>/index.html',
+      html: '<%= yeoman.app %>/index.html'
+      // options: {
+      //   dest: '<%= yeoman.dist %>',
+      //   flow: {
+      //     html: {
+      //       steps: {
+      //         js: ['concat', 'uglifyjs'],
+      //         css: ['cssmin']
+
+
+
+      //       },
+      //       post: {}
+      //     }
+      //   }
+      // }
+    },
+
+// Renames files for browser caching purposes
+    filerev: {
       options: {
-        dest: '<%= yeoman.dist %>',
-        flow: {
-          html: {
-            steps: {
-              js: ['concat', 'uglifyjs'],
-              css: ['cssmin']
-            },
-            post: {}
-          }
-        }
+        encoding: 'utf8',
+        algorithm: 'md5',
+        length: 8
+      },
+      dist: {
+        src: [
+          '<%= yeoman.dist %>/scripts/{,*/}*.js',
+          '<%= yeoman.dist %>/styles/{,*/}*.css',
+          '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+          '<%= yeoman.dist %>/styles/fonts/*'
+        ]
       }
     },
 
     // Performs rewrites based on filerev and the useminPrepare configuration
     usemin: {
-    html: ['<%= yeoman.dist %>/{,*/}*.html'],
-  css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
-js: ['<%= yeoman.dist %>/scripts/{,*/}*.js'],
-options: {
-  assetsDirs: [
-  '<%= yeoman.dist %>',
-  '<%= yeoman.dist %>/images',
-  '<%= yeoman.dist %>/styles'
-  ],
-  patterns: {
-    js: [[/(images\/[^''""]*\.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']]
-  }
-}
-},
+        html: ['<%= yeoman.dist %>/{,*/}*.html'],
+        css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
+        js: ['<%= yeoman.dist %>/scripts/{,*/}*.js'],
+      /*options: {
+        assetsDirs: [
+          '<%= yeoman.dist %>',
+          '<%= yeoman.dist %>/images',
+          '<%= yeoman.dist %>/styles'
+        ],
+        patterns: {
+          js: [[/(images\/[^''""]*\.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']]
+        }
+      }*/
+    },
 
     // The following *-min tasks will produce minified files in the dist folder
     // By default, your `index.html`'s <!-- Usemin block --> will take care of
@@ -430,9 +441,12 @@ options: {
     }
   });
 
-
+grunt.loadNpmTasks( 'grunt-replace' );
 grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
   if (target === 'dist') {
+    //this program was modified by me only compiling the dist not running it you want both uncomment bottom line
+    //return grunt.task.run(['build']);
+    // uncomment below line to run build as well as server 
     return grunt.task.run(['build', 'connect:dist:keepalive']);
   }
 
@@ -451,6 +465,9 @@ grunt.registerTask('server', 'DEPRECATED TASK. Use the "serve" task instead', fu
   grunt.task.run(['serve:' + target]);
 });
 
+grunt.registerTask('azad', [
+  'connect:dist:keepalive'
+  ]);
 grunt.registerTask('test', [
   'clean:server',
   'wiredep',
@@ -470,7 +487,7 @@ grunt.registerTask('build', [
   'concat',
   'ngAnnotate',
   'copy:dist',
-  'cdnify',
+  // 'cdnify',
   'cssmin',
   'uglify',
   'filerev',
